@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Sharewarez</Name>
+  <Repository>kapitanczarnobrod/sharewarez:latest</Repository>
+  <Registry>https://github.com/axewater/sharewarez</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>SharewareZ transforms any game folder into a dynamic, searchable library. With IGDB integration, it indexes games and adds cover images, screenshots, and metadata for easy filtering. Plus, you can invite friends to download games from your library.&#xD;
+&#xD;
+Requirements:&#xD;
+- Postgres database run as a seprate container.&#xD;
+- IGDB API Keys (https://api-docs.igdb.com/#getting-started)&#xD;
+&#xD;
+Make sure to add the admin&#x2019;s email to the INITIAL_WHITELIST for your admin account! This will be the only email address that can register the first account. The first account is automatically admin.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:5001]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/axewater/sharewarez/main/modules/static/newstyle/sharewarez_pirate_small.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Port 1" Target="5001" Default="5001" Mode="tcp" Description="Port to access the app." Type="Port" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Data Folder Warez" Target="/storage" Default="" Mode="rw" Description="This is the folder that contains your game libraries. You can add additional custom library paths on your own." Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Data Folder Imagez" Target="/app/modules/static/library/images" Default="" Mode="rw" Description="Completely optional. Use it if you want to access the images folder." Type="Path" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Postgres Database URL" Target="DATABASE_URL" Default="postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db/${POSTGRES_DB}" Mode="" Description="example:&#13;&#10;postgresql://sharewarezuser:password@127.0.0.1:5432/sharewarez" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Initial Admin Email" Target="INITIAL_WHITELIST" Default="" Mode="" Description="Only email that can register an admin account." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="IGDB Client ID" Target="IGDB_CLIENT_ID" Default="" Mode="" Description="Your IGDB Client ID" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="IGDB Client Secret" Target="IGDB_CLIENT_SECRET" Default="" Mode="" Description="Your IGDB Client Secret" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="IGDB API Endpoint" Target="IGDB_API_ENDPOINT" Default="https://api.igdb.com/v4/games" Mode="" Description="API Address for IGDB. You do not need to change this." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Mail Server" Target="MAIL_SERVER" Default="" Mode="" Description="SMTP Mail Server Address" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Mail Port" Target="MAIL_PORT" Default="" Mode="" Description="SMTP Port" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Mail Use TLS" Target="MAIL_USE_TLS" Default="" Mode="" Description="True or False to use TLS." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Mail Username" Target="MAIL_USERNAME" Default="" Mode="" Description="Email Username" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Mail Password" Target="MAIL_PASSWORD" Default="" Mode="" Description="Email Password" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Mail Default Sender" Target="MAIL_DEFAULT_SENDER" Default="" Mode="" Description="Email address sending mail from." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Zip Files" Target="/modules/static/library/zips" Default="" Mode="rw" Description="Folder that contains zip files. Completely optional." Type="Path" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Themes Folder" Target="/modules/static/library/themes" Default="" Mode="rw" Description="Themes folder for custom themes. Recommended but not required." Type="Path" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Secret Key" Target="SECRET_KEY" Default="put-your-own-random-string-here-please-its-important-anything-random-is-fine" Mode="" Description="This key is used for securing session cookies, it's important you have your own unique key here. Just put 32 (for instance) random characters there." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+</Container>
