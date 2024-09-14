@@ -12,7 +12,7 @@
   <Overview>SharewareZ transforms any game folder into a dynamic, searchable library. With IGDB integration, it indexes games and adds cover images, screenshots, and metadata for easy filtering. Plus, you can invite friends to download games from your library.&#xD;
 &#xD;
 Requirements:&#xD;
-- Postgres database run as a seprate container.&#xD;
+- Postgres database run as a seprate container. You need to make a database and user on your own. Give the user ownership of the database.&#xD;
 - IGDB API Keys (https://api-docs.igdb.com/#getting-started)&#xD;
 &#xD;
 Make sure to add the admin&#x2019;s email to the INITIAL_WHITELIST for your admin account! This will be the only email address that can register the first account. The first account is automatically admin.</Overview>
